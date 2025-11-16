@@ -81,3 +81,60 @@ body{
 }
 .copy-btn:hover{ background: rgba(125,211,252,0.03); }
 .footer{ text-align:center; margin-top:16px; color:var(--muted); font-size:0.85rem; }
+
+/* --- theme-compatible Bootstrap overrides --- */
+
+/* make bootstrap body/bg neutral to allow centered container look */
+body { background: linear-gradient(180deg, #071426 0%, #081426 100%); }
+
+/* ensure Bootstrap link colors aren't too bright */
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* small tweaks for bootstrap text inside cards */
+.card { background: transparent !important; }
+
+/* adjust container padding on small screens */
+@media (max-width: 576px) {
+  .container { padding-left: 16px; padding-right: 16px; }
+}
+
+/* tune card title and small text globally inside our components */
+.card-title { color: var(--accent); font-weight: 700; }
+.card-text { color: #cbd7e6; }
+
+/* reduce border radius conflicts */
+.card, .chuck-card { border-radius: 12px !important; }
+
+/* Accessibility / contrast improvements (global) */
+
+/* stronger subtitle and footer */
+.subtitle,
+.footer,
+small,
+.card-text,
+.joke-text {
+  color: #d6e9fb; /* readable on dark background */
+}
+
+/* secondary text slightly dimmer but still accessible */
+.text-muted,
+.text-quiet {
+  color: #b6cbe0; /* medium contrast */
+}
+
+/* links and accents remain vivid */
+a, .text-accent, .card-title {
+  color: var(--accent);
+}
+
+/* ensure small form text and buttons are legible */
+.btn, .btn-sm, .copy-btn {
+  color: var(--accent);
+  border-color: rgba(125,211,252,0.14);
+}
+
+/* optional slightly larger base font for readability on cards */
+.chuck-card, .joke-card {
+  font-size: 0.98rem;
+}
