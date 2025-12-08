@@ -1,52 +1,97 @@
-# ChuckJokesVue
+# 😂 ChuckJokesVue
+### Minimal Vue 3 + Vite app — Responsive Chuck Norris jokes grid
 
-Minimal Vue 3 + Vite app for Activity 12 and Homework 10: displays a list of Chuck Norris jokes as responsive cards using components and `v-for`, styled for a dark theme.
+Proyecto académico desarrollado en el curso **Activity 12 / Homework 10**.  
+La aplicación muestra una lista de chistes de Chuck Norris como tarjetas responsivas, usando componentes Vue y un tema oscuro.
 
-## What it does
-- Stores the `chuck` array in `App.vue` with objects `{ icon_url, value }`.
-- Renders jokes as responsive cards using a reusable component `ChuckCard.vue`.
-- Responsive layout: 3 cards per row on large screens, 2 per row on medium, 1 per row on small.
-- Cards have equal sizing, a Copy button, and dark-theme styling in `src/assets/styles.css`.
+---
 
-## Project structure
-- `index.html` — Vite entry; includes Bootstrap CSS and project stylesheet  
-- `src/`
-  - `main.js` — mounts the app
-  - `App.vue` — primary view, provides data and renders grid of cards
-  - `components/ChuckCard.vue` — card component (props: `icon_url`, `value`)
-  - `assets/styles.css` — global styles and theme
-- `public/` — static assets (optional local avatar)
-- `package.json`, `vite.config.js`, `README.md`
+## ✨ Descripción
 
-## Run locally (development)
-Prereqs: Node 20.x or 22.x, npm.
+El sistema permite:
+- Almacenar el arreglo `chuck` en `App.vue` con objetos `{ icon_url, value }`.  
+- Renderizar chistes como tarjetas responsivas mediante el componente reutilizable `ChuckCard.vue`.  
+- Layout adaptable: 3 tarjetas por fila en pantallas grandes, 2 en medianas, 1 en pequeñas.  
+- Tarjetas con tamaño uniforme, botón de copiar y estilos en tema oscuro (`src/assets/styles.css`).  
 
-1. Install dependencies
+---
 
-    npm install
+## 🛠️ Tecnologías utilizadas
 
-2. Start dev server (two equivalent options)
+- **Frontend:** Vue 3, Vite  
+- **Estilos:** Bootstrap (CDN), CSS personalizado (dark theme)  
+- **Herramientas:** npm, Node.js (20.x o 22.x)  
 
-    # cross-platform (npm script)
-    npm run dev
+---
 
-    # or on Windows PowerShell from project root
-    .\node_modules\.bin\vite.cmd
+## 📂 Estructura del proyecto
 
-3. Open the Local URL printed by Vite (typically `http://localhost:5173/`).
+```
+index.html              # Entrada Vite, incluye Bootstrap y estilos
+src/
+ ├── main.js            # Monta la app
+ ├── App.vue            # Vista principal, provee datos y renderiza grid
+ ├── components/
+ │    └── ChuckCard.vue # Componente tarjeta (props: icon_url, value)
+ └── assets/styles.css  # Estilos globales y tema oscuro
+public/                 # Assets estáticos (ej. avatar opcional)
+package.json, vite.config.js, README.md
+```
 
-Notes:
-- If you placed avatars in `public/` use paths like `/chuck-norris.png`; otherwise the project uses CDN URLs by default.
-- Ensure `src/main.js` imports `./assets/styles.css` so theme styles load.
+---
 
-## Build / Preview
+## ⚙️ Instalación y ejecución local
 
-    npm run build
-    npm run preview
+### Prerrequisitos
+- Node.js 20.x o 22.x  
+- npm
 
-## Homework 10 / Task10 summary
-- Added `src/components/ChuckCard.vue` that accepts `icon_url` and `value` props and uses Bootstrap layout integrated with the dark theme.
-- Updated `src/App.vue` to provide the modified `chuck` array and render a responsive grid (`col-12 col-md-6 col-lg-4 d-flex`).
-- Included Bootstrap CSS CDN in `index.html`.
-- Ensured equal-size behavior via flex rules in `ChuckCard.vue` and small overrides in `src/assets/styles.css`.
-- Implemented copy-to-clipboard behavior on each card.
+### Pasos
+
+```bash
+# Instalar dependencias
+npm install
+
+# Iniciar servidor de desarrollo
+npm run dev
+# o en PowerShell (Windows)
+.\node_modules\.bin\vite.cmd
+```
+
+Abrir la URL local que imprime Vite (por defecto `http://localhost:5173/`).
+
+**Notas:**
+- Si colocas avatares en `public/`, usa rutas como `/chuck-norris.png`.  
+- Asegúrate de importar `./assets/styles.css` en `src/main.js` para cargar el tema.  
+
+---
+
+## 📦 Build / Preview
+
+```bash
+npm run build
+npm run preview
+```
+
+---
+
+## 📈 Homework 10 / Task10 summary
+
+- Creación de `src/components/ChuckCard.vue` con props `icon_url` y `value`.  
+- Actualización de `src/App.vue` para renderizar el grid responsivo (`col-12 col-md-6 col-lg-4 d-flex`).  
+- Inclusión de Bootstrap CSS vía CDN en `index.html`.  
+- Estilos flex en `ChuckCard.vue` y overrides en `src/assets/styles.css` para tamaño uniforme.  
+- Implementación de botón Copy to Clipboard en cada tarjeta.  
+
+---
+
+## 👨‍💻 Autor
+
+**Fernando Gorostieta Vargas**  
+Proyecto académico — Universidad Tecmilenio, Cancún, México  
+
+---
+
+## 📄 Licencia
+
+MIT
